@@ -40,7 +40,7 @@ def GetAlignmentTitleName(alignment):
 #3.2) Replace with:
 if app.ENABLE_EXTENDED_ALIGNMENT_SYSTEM:
 	def GetAlignmentTitleName(currentAlignment):
-		titleNameTuple = TITLE_NAME_DICT.get(chr.RaceToSex(net.GetMainActorRace()), GENDER_MALE)
+		titleNameTuple = TITLE_NAME_DICT.get(chr.RaceToSex(net.GetMainActorRace()), ('UNKNOWN_GENDER', ))
 		
 		for alignmentIndex, alignmentValue in enumerate((12000, 8000, 4000, 1000, 0, -4000, -8000, -12000)):
 			if currentAlignment >= alignmentValue:
