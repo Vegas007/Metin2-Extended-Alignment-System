@@ -2,7 +2,7 @@
 	def __RegisterTitleName(self):
 		for i in xrange(len(localeInfo.TITLE_NAME_LIST)):
 				chrmgr.RegisterTitleName(i, localeInfo.TITLE_NAME_LIST[i])
-#1.2) Replace with:
+#1.2) Replace with :
 	if app.ENABLE_EXTENDED_ALIGNMENT_SYSTEM:
 		def __RegisterTitleName(self):
 
