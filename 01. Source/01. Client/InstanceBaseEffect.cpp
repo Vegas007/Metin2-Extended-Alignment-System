@@ -42,7 +42,7 @@ std::map<int, std::string> g_TitleNameMap;
 		if (g_TitleNameMap.end() != itor)
 		{
 #ifdef ENABLE_EXTENDED_ALIGNMENT_SYSTEM
-			const BYTE bRace = GetRace();
+			const BYTE bRace = GetJob();
 			const BYTE bSex = RaceToSex(bRace);
 			const std::string & c_rstrTitleName = itor->second.at(bSex);
 #else
