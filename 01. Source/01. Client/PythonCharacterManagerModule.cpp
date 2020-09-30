@@ -9,8 +9,10 @@ PyObject * chrmgrRegisterTitleName(PyObject* poSelf, PyObject* poArgs)
 {
 	int	iIndex;
 	char * szTitleNameF, * szTitleNameM;
-	if (!PyTuple_GetInteger(poArgs, 0, &iIndex) || !PyTuple_GetString(poArgs, 1, &szTitleNameF) || !PyTuple_GetString(poArgs, 2, &szTitleNameM))
-		return Py_BadArgument();
+	
+	PyTuple_GetInteger(poArgs, 0, &iIndex);
+	PyTuple_GetString(poArgs, 1, &szTitleNameF);
+	PyTuple_GetString(poArgs, 2, &szTitleNameM);
 
 	CInstanceBase::RegisterTitleName(iIndex, szTitleNameF, szTitleNameM);
 	return Py_BuildNone();

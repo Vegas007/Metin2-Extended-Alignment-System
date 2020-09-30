@@ -7,7 +7,7 @@ void CInstanceBase::RegisterTitleName(int iIndex, const char * c_szTitleName)
 #ifdef ENABLE_EXTENDED_ALIGNMENT_SYSTEM
 void CInstanceBase::RegisterTitleName(const int iIndex, const char * c_szTitleNameF, const char * c_szTitleNameM)
 {
-	const std::vector<const std::string> vecTitleName{c_szTitleNameF, c_szTitleNameM};
+	std::vector<std::string> vecTitleName{c_szTitleNameF, c_szTitleNameM};
 	g_TitleNameMap.insert(make_pair(iIndex, vecTitleName));
 }
 #else
@@ -21,7 +21,7 @@ void CInstanceBase::RegisterTitleName(int iIndex, const char * c_szTitleName)
 std::map<int, std::string> g_TitleNameMap;
 //2.2) Replace with:
 #ifdef ENABLE_EXTENDED_ALIGNMENT_SYSTEM
-std::map<const BYTE, const std::vector<const std::string>> g_TitleNameMap;
+std::map<BYTE, std::vector<std::string>> g_TitleNameMap;
 #else
 std::map<int, std::string> g_TitleNameMap;
 #endif
@@ -35,7 +35,7 @@ std::map<int, std::string> g_TitleNameMap;
 		}
 //3.2) Replace with:
 #ifdef ENABLE_EXTENDED_ALIGNMENT_SYSTEM
-		std::map<const BYTE, const std::vector<const std::string>>::const_iterator itor = g_TitleNameMap.find(iAlignmentGrade);
+		std::map<BYTE, std::vector<std::string>>::const_iterator itor = g_TitleNameMap.find(iAlignmentGrade);
 #else
 		std::map<int, std::string>::iterator itor = g_TitleNameMap.find(iAlignmentGrade);
 #endif
